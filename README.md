@@ -47,7 +47,7 @@ Follow this guide to get the server and bot instances up and running.
 ### Step 1: Download the LLM Model
 1. Visit the HuggingFace repository: [yuxinlu1/gemma-4-12B-agentic-fable5-composer2.5-v2-3.5x-tau2-GGUF](https://huggingface.co/yuxinlu1/gemma-4-12B-agentic-fable5-composer2.5-v2-3.5x-tau2-GGUF).
 2. Download your preferred quantization file (e.g. `gemma4-v2-Q4_K_M.gguf`).
-3. Place the file inside a local directory, for example: `~/Applications/Jarvis/models/gemma4-v2-Q4_K_M.gguf`.
+3. Place the file inside the bot's own `models/` directory, for example: `~/Applications/discord-local-llm-bot/models/gemma4-v2-Q4_K_M.gguf`.
 
 ---
 
@@ -73,7 +73,7 @@ Ensure you have `llama.cpp` installed (or use a compatible local executor like J
 ```bash
 # Example running llama-server manually
 llama-server \
-  --model ~/Applications/Jarvis/models/gemma4-v2-Q4_K_M.gguf \
+  --model ~/Applications/discord-local-llm-bot/models/gemma4-v2-Q4_K_M.gguf \
   --ctx-size 8192 \
   --port 8080 \
   --parallel 1
