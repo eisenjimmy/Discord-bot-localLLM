@@ -206,3 +206,27 @@ The bots do not respond to every message in a channel. They will only reply if *
 ### Slash commands are missing
 - When syncing slash commands globally, it can take Discord up to **1 hour** to populate them on all servers.
 - For instant testing during development, configure the `GUILD_ID` environment variable in your `.env` file to sync commands immediately to your test server.
+
+---
+
+## AI Handoff Prompt
+
+If you are handing off this repository to another AI coding assistant (like Claude, Gemini, or ChatGPT) to set up, extend, or debug this project, you can copy-paste the following prompt:
+
+```text
+You are an expert developer helping me configure and develop my Discord Local LLM Bot project.
+This repository implements a multi-bot Discord bot system supporting co-running bots (e.g. Juan and Jisoo) locally on macOS.
+
+Key Architecture:
+1. Entry point: main.py, loads custom configuration files via the ENV_FILE environment variable (e.g. ENV_FILE=.env or ENV_FILE=.env.jisoo).
+2. Database: db.py (SQLite) stores chat logs, custom memories (/remember), and server-specific learned traits (/improve). Queries are isolated by the dynamic BOT_NAME environment variable.
+3. completions: llm.py connects to llama-server (OpenAI-compatible endpoints) on port 8080.
+4. Agent Tools: tools.py / search.py / meme.py support web search (DuckDuckGo or Google API), fetching webpages, weather lookups (wttr.in), and memegen.link meme generation.
+5. Dynamic Personas: Juan (friendly Mexican dude) and Jisoo (Korean pop star from BLACKPINK with a quirky 4D personality).
+
+Please read the README.md and the code files in the repository. Help me with:
+- Setting up the Python virtual environment (.venv) and installing requirements.txt.
+- Configuring the .env and .env.jisoo credentials.
+- Running the llama-server with the recommended GGUF model: yuxinlu1/gemma-4-12B-agentic-fable5-composer2.5-v2-3.5x-tau2-GGUF.
+- Extending slash commands in commands.py or adding custom tools in tools.py.
+```
