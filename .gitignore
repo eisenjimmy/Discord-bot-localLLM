@@ -1,0 +1,38 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+.venv-py39-backup/
+env/
+venv/
+ENV/
+
+# Configuration and secrets (Ignore local credentials to prevent leaks)
+.env
+.env.jisoo
+
+# Database files
+bot_data.db
+bot_data.db-journal
+
+# Log files
+bot.log
+*.log
+
+# Generated output directories
+output_images/
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Note: Models (.gguf files and models/ folder) are explicitly excluded 
+# from this gitignore so they can be tracked/managed if desired.
